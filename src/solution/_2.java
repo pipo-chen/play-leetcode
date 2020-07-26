@@ -1,10 +1,7 @@
 package solution;
 
 import common.ListNode;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class _2 {
     public static class Solution {
