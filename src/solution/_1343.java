@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package solution;
+
 /**
  *  //数组排序 -> 计算第一个平均超过 指定数值
  *         int length = arr.length;
@@ -31,7 +32,7 @@ import java.lang.reflect.Array;
  *         }
  *         return 0;
  * */
-public class Solution {
+public class _1343 {
     public int numOfSubarrays(int[] arr, int k, int threshold) {
         int i =0;
         int count = 0;
@@ -51,7 +52,7 @@ public class Solution {
 
     public static void main(String args[]) {
         int arr[] = {7,7,7,7,7,7,7};
-        int a = new Solution().numOfSubarrays(arr, 7,7);
+        int a = new _1343().numOfSubarrays(arr, 7,7);
         System.out.println(a);
     }
 }
