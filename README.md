@@ -35,3 +35,9 @@
             - head 始终为该链表的头部
             - pre2->next = pre;
             - cur2->next = cur;
+- [x] 83 删除有序链表中重复元素</br>
+    - 解题思路：遍历链表，设置两个链表指针 cur、next 
+        - 如果 cur->val == next->val 则删除当前next指针。删除方式：cur->next = next->next。⚠️切勿进行 cur = cur->next的操作。否则将变成两两比较 测试用例：[1,1,1,1]
+        - 如果 cur->val != next->val 则cur进入下一步 cur = cur->next
+        - ⚠️注意判断：cur 以及 cur->next 为 null 的情况，作为循环终止条件
+    - 错误思路：1.设置虚拟头指针 导致起始位置比较的时候，创建数值可能会等于head真正的第一个元素
