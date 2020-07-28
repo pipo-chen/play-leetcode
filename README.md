@@ -68,4 +68,6 @@
             - 如果 cur 不是待删除指针：pre = cur; 
             - cur = next;
         - ❌：善后：当 cur 和 next 为空的时候，flag 为 true 说明最后一个元素的 cur 仍然需要绕过：pre->next = null;
-     
+- [x] 1528 重新排列字符串</b
+    - 提升的解题思路：字符数组，下标为【indices[i]】 内容为【s.charAt()[i]】
+    - 我一开始使用：map<key,value>存一遍、取一遍 
