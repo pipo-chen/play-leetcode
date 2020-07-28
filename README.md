@@ -10,3 +10,9 @@
         - 结束条件：所有边被访问完。
         - 进桶条件：当前+桶内 < target(目标边长)
         - 不满足：则回退当前桶值 
+- [x] 206 反转链表</br>
+    - 操作 3 个指针，分别 pre、cur、next
+        - next = cur->next;
+        - cur->next = pre
+        - pre = cur;
+        - cur = next;
