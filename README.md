@@ -56,5 +56,16 @@
         - node = new ListNode(x);
         - node->next = p;
         - p = node;
-       
-             
+
+- [x] 82 删除排序链表中重复元素II</br>
+    - 解题思路：
+        - 1. 设置三个指针，分别是 pre、cur、next。
+        - 2. 遍历链表，如果遇到重复的元素，则： 
+            - cur->next = next->next;
+            - ⚠️按题意来说出现重复 cur 也应该要删除
+        - 3. 设置一个flag判断 cur 是否为删除后留下的唯一元素。
+            - 如果 cur 是待删除的唯一元素则：pre = cur->next; (跳过对cur当前的指针连接)
+            - 如果 cur 不是待删除指针：pre = cur; 
+            - cur = next;
+        - ❌：善后：当 cur 和 next 为空的时候，flag 为 true 说明最后一个元素的 cur 仍然需要绕过：pre->next = null;
+     
