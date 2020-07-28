@@ -16,3 +16,22 @@
         - cur->next = pre
         - pre = cur;
         - cur = next;
+- [x] 92 反转链表II</br>
+    - 解题思路：1. 分段操作 中间段进行反转 2. 链表拼接 
+        - pre = null;
+        - cur、next = head;
+        - 前段拷贝：
+            pre = cur;
+            cur = cur->next;
+        - 中段反转
+            ⚠️ 反转前记录 pre 和 cur 的位置 【作为中段链表的头、尾、届时进行链表拼接】
+            - pre2 = pre; cur2 = cur;
+            - 开始经典反转 4 步骤
+                - next = cur->next;
+                - cur->next = pre;
+                - pre = cur;
+                - cur = next;
+        - 链表拼接
+            - head 始终为该链表的头部
+            - pre2->next = pre;
+            - cur2->next = cur;
