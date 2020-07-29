@@ -91,5 +91,21 @@
 - [x] 148 排序链表</br>
     - 解题思路：归并排序
         - 原始思路：统计链表长度并存储在List里面，进行排序，最后重新存入新链表。（效率低 且不符合题目要求）
+
+- [x] 24 两两交换链表中的节点</br>
+    - 解题思路：穿针引线
+        - 1. 设置虚拟头节点
+        - 2. 设置四个节点：pre、node1、node2、next
+        = 3. 肯定是需要两个节点进行交换：
+            - node1 = pre.next;
+            - node2 = node1.next;
+            - next = node2.next;
+            - node2.next = node1;
+            - node1.next = next;
+            - pre.next = node2;
+            - 交换完成 将 pre 指针移动到当前 node1 位置 :  pre = node1;
+        - ⚠️ 循环的结束条件：pre.next != null 并且 pre.next.next ！= null
+        
+         
         
         
