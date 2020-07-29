@@ -78,3 +78,14 @@
         - 考虑到两个链表长度不一，如果另一个链表已经移动到null节点，比较方式为：(这样肯定是当前有剩余的链表元素为"小")
             - l1 = l1 != null ? l1.val : l2.val + 1;
             - l2 = l2 != null ? l2.val : l1.val + 1;
+
+- [x] 剑指offer 24 反转链表</br>
+   - 解题思路： 
+       - 创建头指针 pre 将其指向 null
+       - 遍历链表采用经典反转四步骤
+           - next = cur.next;
+           - cur.next = pre;
+           - pre = cur;
+           - cur = next;
+        
+        
