@@ -130,7 +130,26 @@
         - 1. 寻找到 tail 的位置，tail 为 pre 向后移动 n+1 距离的节点
         - 2. pre 和 tail 同时向后移动，直到 tail 指针指向 null。则此时 pre 指针就准确的坐落在将删除指针元素的前一个位置。
         - 3. 删除方式：pre.next = pre.next.next.
-        
+
+- [x] 61 旋转链表</br>
+    - 解题思路：
+        - 1.统计链表实际总长度
+        - 2. 寻找链表的尾部，使其尾部指向头部形成循环。 此时需要两个节点：tail->next = head;
+        - 3. 寻找到该循环链表实际的尾部地址，地址 pos = len - (k % len); 
+        - 4. 指定位置的下一个为返回链表的头部：result = tail.next; 再将指定位置的下一节点指向 null : tail.next = null;
+    - ⚠️：a. 优先排除链表长度为空/长度=1情况的旋转。 b. 优先排除 k = 0 的旋转。
+    - 核心代码：
+        - 寻找尾部 
+            ListNode tail = head;
+            while(tail.next != null) 
+                tail = tail.next;
+        - 寻找实际的 tail ⚠️当前tail并不是从头开始，是从尾部开始，所以要比常规寻找 pos 多了一步 tail = tail.next
+            for (int i = 0; i < pos; i++)
+                tail = tail.next;
+        - 放置尾部和实际头部
+            result = tail.next;
+            tail.next = null;
+            
          
-        
+       
         
