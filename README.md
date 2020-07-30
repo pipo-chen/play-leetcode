@@ -159,4 +159,20 @@
     - 解题思路：同 2 链表求和。
         - 注意：1. l1 或者 l2 不为空时继续循环。（ || ❌ &&）
         - new 链表节点的时候：p.next = new ListNode(值) 而不是 p = new ListNode(值);否则前面记录的节点前功尽弃。
-        - 结束之后，注意进位 carry 是否为 1 的情况。     
+        - 结束之后，注意进位 carry 是否为 1 的情况。 
+        
+- [x] 817 链表组件</br>
+    - 解题思路：创建两个List集合：
+        - 集合1：list 用于将数组转换成list 从而可以直接调用 contains 函数判断是否存在该元素
+        - 集合2：temp 用于在遍历链表的时候，将持续contain的元素存入，从而判断是否增加计数
+        - ⚠️：head 链表遍历完成之后，很有可能存在最后一组 temp 中是有元素的情况，所以仍然需要判断一次。
+    - 核心代码：
+        - list.add(G[i]) //创建集合1
+        - list.contains(head.val)
+            - list.remove((object) head.val);//⚠️此处注意：是移除元素，并不是移除指定index
+            - temp.add(head.val);
+        - if (!temp.isEmpty())
+            - count++;
+            - temp.clear();//⚠️此处注意：将用于统计的集合重新清空
+          
+                
