@@ -150,6 +150,9 @@
             result = tail.next;
             tail.next = null;
             
+- [x] 18 删除链表的节点</br>
+    - 解题思路：p.next = p.next.next; 经典删除方式。
+        - 考虑点⚠️： 1. head 只有唯一一个元素需要删除，则需设立虚拟头节点 2. p.next.next 为空的时候指针 3. 循环的控制条件：p.next != null            
          
        
         
