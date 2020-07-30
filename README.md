@@ -174,5 +174,16 @@
         - if (!temp.isEmpty())
             - count++;
             - temp.clear();//⚠️此处注意：将用于统计的集合重新清空
-          
+
+- [x] 141 环状链表</br>
+    - 解题思路：快慢指针
+        - 快慢来比赛，套圈即是环
+        - 经典步骤:
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+                if (slow == fast) 
+                    return true;
+            }       
+         
                 
