@@ -7,18 +7,18 @@ import java.util.ArrayList;
 
 public class _06 {
     public int[] reversePrint(ListNode head) {
-        ArrayList<Integer> values = new ArrayList<>();
-        while (head != null) {
-            values.add(head.val);
+        ListNode p = head;
+        int length = 0;
+        while (p !=null) {
+            p = p.next;
+            length ++;
+        }
+        int[] res = new int[length];
+        for (int i = length - 1; i >= 0; i--) {
+            res[i] = head.val;
             head = head.next;
         }
-        int total = values.size();
-        int[] nums = new int[total];
-        int count = 0;
-        for (int i = total - 1; i >= 0; i--) {
-            nums[count++] = values.get(i);
-        }
-        return nums;
+        return res;
     }
     public static void main(String[] args) {
         ArrayList values = new ArrayList();
