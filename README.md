@@ -244,4 +244,13 @@
         - 1. 把 words 放入 list 中 便于删除
         - 2. 遍历 num 每个取值，内部遍历 words 中每个字符串对应 num 位置的字母。
         - 排除：num 和 words 中字符串长度不一的，可直接删除。
+        
+- [x] 48. 旋转图像 </br>
+    - 解题思路：
+        - 1. 上下对称
+        - 2. 右对角线对称
+    - 核心代码：
+        1. matrix[row][col] <-> matrix[total_row - row - 1][col] (条件是：row < 1/2 total_row && col < total_col)
+        2. matrix[row][col] <-> matrix[col][row] (条件是：row < total_row & col < row)
+        
  
