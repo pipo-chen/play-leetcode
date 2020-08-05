@@ -252,5 +252,10 @@
     - 核心代码：
         1. matrix[row][col] <-> matrix[total_row - row - 1][col] (条件是：row < 1/2 total_row && col < total_col)
         2. matrix[row][col] <-> matrix[col][row] (条件是：row < total_row & col < row)
-        
+
+- [x] 162. 寻找峰值 </br>
+    - 解题思路：
+        - 1. 数组长度小于 2 个 直接范围峰值下标 0；
+        - 2. 数组长度大于 2 的时候，查询中间的峰值
+        - 3. 比较最后一位与最后第二位的大小，如果最后一位更大则进行下标返回，否则意味着没有峰值
  
