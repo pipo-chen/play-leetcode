@@ -2,30 +2,28 @@ package solution;
 
 public class _1051 {
     public int heightChecker(int[] heights) {
-        int [] result = new int[heights.length];
-        //对 heights 进行排序
-        for (int i = 0; i < heights.length; i++) {
-            result[i] = heights[i];
+        //桶排序
+        int [] bucket = new int[101];
+        for (int x : heights) {
+            bucket[x] ++;
         }
-        for (int i = 0; i < heights.length; i++) {
-            for (int j = i; j < heights.length; j++) {
-                if (heights[i] > heights[j]) {
-                    int temp = heights[i];
-                    heights[i] = heights[j];
-                    heights[j] = temp;
+        int j = 0;
+        int count = 0;
+        for (int i = 0; i < bucket.length && j < heights.length; i++) {
+            while (bucket[i] != 0) {
+                //比较该位置的 heights 不管是否相等 j 都应该进一位
+                //还得循环同一位置上的[]
+                if (heights[j] != i) {
+                   count++;
                 }
+                j++;
+                bucket[i]--;
             }
         }
-        int count = 0;
-        for (int i = 0; i < heights.length; i++) {
-            if (heights[i] != result[i])
-                count++;
-        }
-
         return count;
     }
     public static void main(String[] args) {
-        int[] heights = {1,1,4,2,1,3};
+        int[] heights = {2,1,2,1,1,2,2,1};
         int res = new _1051().heightChecker(heights);
         System.out.println(res);
     }
