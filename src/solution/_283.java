@@ -2,21 +2,16 @@ package solution;
 
 public class _283 {
     public void moveZeroes(int[] nums) {
-        int i = 0;
-        int j = 0;
-        while (j < nums.length && i < nums.length) {
-            while (nums[i] != 0)
-                i++;
-            j = i + 1;
-            while ( j <nums.length && nums[j] == 0)
-                j++;
-
-            if (j < nums.length) {
-                int temp = nums[j];
-                nums[j] = nums[i];
-                nums[i] = temp;
-                i++;
+        int zero = 0;
+        for (int x : nums) {
+            if (x != 0) {
+                nums[zero] = x;
+                zero++;
             }
+        }
+        while (zero < nums.length) {
+            nums[zero] = 0;
+            zero++;
         }
 
         for (int n : nums)
