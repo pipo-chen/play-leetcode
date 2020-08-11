@@ -299,5 +299,11 @@
     - 解题思路：
         - 1. 所有非 val 元素不停的往前移动
         - 2. 返回移动完之后返回最后一个非 val 下标即 count
-    
+- [x] 80. 删除排序数组中的重复项 II<br/>
+    - 解题思路：
+        - 1.三个变量 i 控制数组循环 j 慢指针用于数据覆盖位 count 统计相同数字数量是否超过 2个
+        - 核心代码：
+            - 1. int i = 1; i < nums.length; i++
+            - 2. if (nums[i] == nums[i - 1]) count++; else count = 0;
+            - 3. if (count < 2) nums[j] = nums[i]; j++;
     
