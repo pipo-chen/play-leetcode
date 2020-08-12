@@ -327,4 +327,7 @@
         sum += nums[i];
         如果 nums[i] > sum 那么 sum = nums[i]
         不停的判断当前的 sum 是否 > maxSum 如果大于的话则 maxSum = sum;
-         
+
+## 字符串模块
+- [x] 344. 反转字符串 <br/>
+    - 解题思路：双指针交换
