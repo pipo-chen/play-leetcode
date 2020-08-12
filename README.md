@@ -327,6 +327,13 @@
         sum += nums[i];
         如果 nums[i] > sum 那么 sum = nums[i]
         不停的判断当前的 sum 是否 > maxSum 如果大于的话则 maxSum = sum;
+        
+- [x] 1. 两数之和 <br/>
+    - 解题思路：哈希表。下标为value 元素为 key
+        - 核心代码：map.containsKey(target-x)
+        - 匹配到了的时候，还需要判断 匹配到的元素，与当前元素不是同一个下标 例如⚠️ 为了排除元素重复情况：[3,3,2]
+            - if (i != map.get(target-x)) 
+            -   return new int[] {i, map.get(target-x)} 
 
 ## 字符串模块
 - [x] 344. 反转字符串 <br/>
