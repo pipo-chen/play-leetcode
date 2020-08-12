@@ -321,3 +321,10 @@
         - 1. 当数组长度为 1 的时候，遍历起来 有匹配和没有匹配，都会产生 left == right. 所以需要提前排除
         - 2. 当数组为空的时候
         - 3. 常规：right < left return 0; right >= left return right - left + 1;
+        
+- [x] 53. 最大子序和 <br/>
+    - 解题思路：动态规划。
+        sum += nums[i];
+        如果 nums[i] > sum 那么 sum = nums[i]
+        不停的判断当前的 sum 是否 > maxSum 如果大于的话则 maxSum = sum;
+         
