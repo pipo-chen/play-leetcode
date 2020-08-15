@@ -1,4 +1,4 @@
-package solution;
+package review;
 
 public class _8080 {
     public int removeDuplicates(int[] nums) {

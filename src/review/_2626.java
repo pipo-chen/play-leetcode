@@ -1,4 +1,4 @@
-package solution;
+package review;
 
 public class _2626 {
     public int removeDuplicates(int[] nums) {
