@@ -8,20 +8,17 @@ public class _0201 {
     public ListNode removeDuplicateNodes(ListNode head) {
         //先进行一遍统计
         ListNode cur = head;
-        //无序的
-        Set set = new HashSet();
-
-        int count = 0;
+        ArrayList list = new ArrayList();
         while (cur != null) {
-            set.add(cur.val);
+            int val = cur.val;
+            if (!list.contains(val))
+                list.add(val);
             cur = cur.next;
         }
 
-        ListNode dummyHead = new ListNode(-1);
-        dummyHead.next = null;
+        ListNode dummyHead = new ListNode(88);
         cur = dummyHead;
-
-        Iterator iterator = set.iterator();
+        Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
             int data = (int)iterator.next();
             ListNode temp = new ListNode(data);
@@ -32,7 +29,7 @@ public class _0201 {
     }
     public static void main(String[] args) {
         ArrayList nums = new ArrayList();
-        nums.add(1);
+        nums.add(4);
         nums.add(2);
         nums.add(3);
         nums.add(3);
