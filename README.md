@@ -415,7 +415,7 @@
             如果 key 不在 map 里面，则创建 List 以 字符串排序后 为 key 将原始字符串添加进 list
         3. 遍历 map 将全部 list 加入 groupList 里面。
         核心思路：排序后的状态为 key，所有拥有相同 key 的元素，加入 list。
-        
+    - 优化：不需要通过遍历 map 获取 value 添加进入 groupList -> new ArrayList<>(map.values())
     
 ## 字符串模块
 - [x] 344. 反转字符串 <br/>
