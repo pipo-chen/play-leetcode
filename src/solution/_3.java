@@ -25,7 +25,7 @@ public class _3 {
 		}
 		return maxLen;
 	}
-	
+
     public static void main(String[] args) {
 		String s = "aabaab!bb";
 		int res = new _3().lengthOfLongestSubstring(s);
