@@ -1,7 +1,5 @@
 package solution;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 public class _1606 {
     public int smallestDifference(int[] a, int[] b) {
         quick_sort(a, 0, a.length - 1);
