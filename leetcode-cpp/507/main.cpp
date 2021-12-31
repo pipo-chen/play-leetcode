@@ -6,9 +6,25 @@
 //
 
 #include <iostream>
+#include <math.h>
+using namespace::std;
 
+bool checkPerfectNumber(int num) {
+    //从当前到 某个位置
+    //一定有一项 1
+    if (num < 0)
+        return false;
+    int sum = 1;
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) {
+            sum += (i + num / i);
+        }
+    }
+    return sum == num;
+
+}
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    cout << checkPerfectNumber(496) << endl;
+    cout << checkPerfectNumber(495) << endl;
     return 0;
 }
