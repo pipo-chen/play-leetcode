@@ -1,5 +1,5 @@
 # play-leetcode
-Everyday solve one leetcode question.
+2022 FLAG: Solve One Leetcode Question Everyday.
 
 
 # play-pta
