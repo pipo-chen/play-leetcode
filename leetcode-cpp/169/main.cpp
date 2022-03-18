@@ -7,30 +7,21 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace::std;
 
 int m(vector<int>& nums) {
-    map<int, int>cmap;
-    for (int i = 0; i < nums.size(); i++) {
-        //判断是否有key
-        if(cmap.count(nums[i]) == 0) {
-            cmap[nums[i]] = 1;
-        } else {
-            cmap[nums[i]] = cmap[nums[i]] + 1;
+    unordered_map<int, int> counts;
+    int majority = 0, cnt = 0;
+    for (int num : nums) {
+        ++counts[num];
+        if (counts[num] > cnt) {
+            majority = num;
+            cnt = counts[num];
         }
     }
-    int max_num = -1, max_index = -1;
-    
-    for(map<int, int>:: iterator iter = cmap.begin(); iter != cmap.end(); iter++) {
-        if (iter->second > max_num) {
-            max_num = iter->second;
-            max_index = iter->first;
-        }
-    }
-
-    return max_index;
+    return majority;
 }
 
 int main(int argc, const char * argv[]) {
