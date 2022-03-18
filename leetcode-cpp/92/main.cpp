@@ -41,17 +41,16 @@ ListNode *reverse(ListNode *head, int left, int right) {
     ListNode *dummyHead = (ListNode *)malloc(sizeof(struct ListNode));
     dummyHead->next = head;
     ListNode *pre = dummyHead;
-    
     for (int i = 1; i < left; i++) {
         pre = pre->next;
     }
-    ListNode *cur = pre->next;
-    for (int i = 0; i < (right - left) && cur && cur->next; i++) {
-        ListNode *next = cur->next;
-        cur->next = next->next;
+    ListNode *tail = pre->next;
+    for (int i = left; i < right && tail->next; i++) {
+        //开始头插
+        ListNode *next = tail->next;
+        tail->next = next->next;
         next->next = pre->next;
         pre->next = next;
-        //cur 固定的
     }
     return dummyHead->next;
 }
@@ -60,6 +59,6 @@ int main(int argc, const char * argv[]) {
     int data[] = {1,2,3,4,5};
     ListNode *head = Create(data, 5);
     PrintList(head);
-    PrintList(reverse(head, 2, 4));
+    PrintList(reverse(head, 0, 5));
     return 0;
 }
